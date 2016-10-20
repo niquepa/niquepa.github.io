@@ -1,7 +1,39 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+  <body>
+    <h1>Try to type more than 6 lines</h1>
+
+     <textarea cols="200" wrap="hard" id="splitLines"></textarea>
+    <!-- The cols attribute will prevent users on how many character
+    they can type in each row -->
+
+     <script>
+     var limit = 6; // <---max no of lines you want in textarea
+     var textarea = document.getElementById("splitLines");
+     var spaces = textarea.getAttribute("cols");
+     textarea.onkeyup = function() {
+        var lines = textarea.value.split("\n");
+        for (var i = 0; i < lines.length; i++)
+        {
+             if (lines[i].length <= spaces) continue;
+             var j = 0;
+             var space = spaces;
+             while (j++ <= spaces)
+             {
+                if (lines[i].charAt(j) === " ") space = j;
+             }
+         lines[i + 1] = lines[i].substring(space + 1) + (lines[i + 1] || "");
+         lines[i] = lines[i].substring(0, space);
+       }
+         if(lines.length>limit)
+         {
+             textarea.style.color = 'red';
+             setTimeout(function(){
+                textarea.style.color = '';
+             },500);
+         }
+        textarea.value = lines.slice(0, limit).join("\n");
+     };
+     </script>
+ 	</body>
 </html>
