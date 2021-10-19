@@ -1,0 +1,77 @@
+.document.pdf
+{
+
+}
+
+thead { display: table-header-group; }
+tfoot { display: table-row-group; }
+tr { page-break-inside: avoid !important; }
+
+.table.table.table-condensed.pdf
+{
+    font-size: small;
+    /*page-break-inside: avoid !important;*/
+    /*background: tomato;*/
+}
+
+tr.order_pdf_group td {
+    border-top: 4px double #323536 !important;
+}
+th.pdf_regulation_header_column{
+    text-align: center;
+}
+td.regulation_header{
+    font-size: medium;
+}
+td.pdf_sized_regulation_legend_column
+{
+    max-width: 150px;
+    text-align: center;
+}
+td.pdf_sized_regulation_description_column
+{
+    min-width: 55px;
+    text-align: center;
+}
+td.pdf_regulation_row_cell
+{
+    text-align: center;
+}
+
+.row.pdf_order_info
+{
+    font-size: medium;
+}
+
+td.pdf_runsheet_info {
+    width: 50%;
+    font-size: medium;
+}
+
+tr.pdf_multi_row_header_top{
+    text-align: center;
+    border-bottom: none;
+    border-top: none;
+}
+
+th.pdf_worksheet_top_header_column{
+    text-align: center;
+    border-bottom: none;
+    border-top: none;
+}
+
+tr.pdf_multi_row_header_bottom{
+    border-top: none;
+    text-align: center;
+}
+
+legend.pdf
+{
+    font-size: medium;
+}
+
+.page-break {
+    display:block;
+    clear:both;
+    page-break-before:always;
+}
